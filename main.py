@@ -11,12 +11,9 @@ import os
 import sys
 import json
 from datetime import datetime
-from scrapers.api_scraper import fetch_live_and_upcoming_matches
-from scrapers.browser_scraper import fetch_matches_with_browser
-from scrapers.network_capture import fetch_matches_with_cookies
 
 # Add parent directory to path to allow imports from modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import scrapers
 from scrapers.api_scraper import fetch_live_and_upcoming_matches
@@ -29,7 +26,8 @@ def setup_directories():
         "data",
         "data/cookies",
         "data/api_requests",
-        "data/matches"
+        "data/matches",
+        "data/screenshots"
     ]
     
     for directory in dirs:
